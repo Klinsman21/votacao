@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Popup{% endblock %}
+
+{% block content %}
+
+
+    <div id="main" class="block-color" style="text-align: center;">
+    {% if user.is_authenticated %}
+        <div class="title-h1" ">
+        <h1 >Você já votou nesta lei!</h1>
+        </div>
+        <META http-equiv="refresh" content="1;URL=/list">
+    {% else %}
+        <META http-equiv="refresh" content="0;URL=/">
+    {% endif %}
+    
+</div>
+{% endblock %}

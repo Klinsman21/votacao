@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}Criar Votação{% endblock %}
+
+{% block content %}
+
+<div id="main2" class="block-color" style="text-align: center;">
+<div class="top-buffer">    
+    <div class="mx-auto" style="width: 300px;">
+        <div class="col-sm-20 text-center">
+        <img class="img-fluid" alt="Responsive image" height="90" width="90" src="https://cdn.icon-icons.com/icons2/520/PNG/512/Law_icon-icons.com_52041.png" >
+        <h1>Criação de lei</h1>
+        <div style="margin-top:20px;">
+        <form method="POST" class="form-signin">
+                {% csrf_token %}
+
+                <label class="container-fluid">Nome da lei:</label>
+                <input type="text" name="name" required="" maxlength="150" id="id_name" lass="form-control">
+
+                <label class="container-fluid">Descrição da lei:</label>
+                <textarea name="description" cols="40" rows="10" required="" id="id_description"></textarea>
+
+                <div class="btn-group" role="group" aria-label="Basic example">
+
+                <button type="submit" name="submit" class="btn btn-primary">Criar lei</button>
+                <button style="margin: 5px;" onclick="window.location.href='/'"  class="btn btn-secundary">Home</button>
+                </div>
+                
+        </form>
+     </div>   
+    </div>
+    </div>
+    </div>
+    </div>
+
+{% endblock %}

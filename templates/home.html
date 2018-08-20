@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+
+<div id="main" class="block-color" style="text-align: center;">
+	{% if user.is_authenticated %}
+  		<h1>Sistema de votação</h1><br>
+  		<div style="margin-top: 10px;">
+  		<h1>Oi {{ user.username }}! Escolha uma das opções</h1><br>
+  		<button onclick="window.location.href='/create-voting'" style="margin: 5px;" class="btn btn-primary">Criar projeto de lei</button>
+  		<button onclick="window.location.href='/list'" style="margin-left: 20px; margin-right: 20px;" class="btn btn-success">Votar</button>
+  		<button onclick="window.location.href='/accounts/logout'" style="margin: 5px;" class="btn btn-warning">Sair</button>
+  		</div>
+  		
+	{% else %}
+		<h1 >Sistema de votação</h1>
+  		<div style="margin-top: 40px;">
+  		<h4>Faça login ou crie uma nova conta</h4><br>
+  		<button onclick="window.location.href='/accounts/login'" style="margin: 5px;" class="btn btn-success">Login</button>
+  		<button onclick="window.location.href='/signup'" style="margin: 5px;" class="btn btn-primary">Cadastre-se</button>
+  		</div>
+	{% endif %}
+	
+</div>
+
+
+
+{% endblock %}
